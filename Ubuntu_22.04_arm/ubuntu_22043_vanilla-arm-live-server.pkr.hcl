@@ -49,7 +49,7 @@ source "parallels-iso" "vanilla-server" {
   memory                  = "${var.memory_amount}"
   prlctl                  = [["set", "{{.Name}}", "--bios-type", "efi-arm64" ]]
   prlctl_version_file     = ".prlctl_version"
-  vm_name                 = "ubuntu-server-vanilla"
+  vm_name                 = "Yogi-Server"
 }
 
 build {
