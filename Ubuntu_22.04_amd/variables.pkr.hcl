@@ -33,11 +33,11 @@ variable "iso_url" {
 
 variable "db_user" {
     type = string
-    default = "yogi"
+    default = "Yogi"
 }
 
 variable "db_pass" {
   type = string
   sensitive = true
-  default = "yogi"
+  default = "Yogi"
 }
