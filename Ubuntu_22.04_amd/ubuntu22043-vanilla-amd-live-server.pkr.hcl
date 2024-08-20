@@ -81,6 +81,12 @@ build {
 
   }
 
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    script          = "../Scripts/Post_Install_Mongo4.2.sh"
+ 
+  }
+  
   post-processor "vagrant" {
     keep_input_artifact = false
     output              = "${var.build_artifact_location}{{ .BuildName }}-${local.timestamp}.box"
