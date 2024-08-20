@@ -58,19 +58,19 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    script          = "../Scripts/post_install_packages.sh"
+    script          = "../Scripts/Post_Install_Packages.sh"
  
   }
   
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    script          = "../Scripts/post_install_vagrant.sh"
+    script          = "../Scripts/Post_Install_Vagrant.sh"
  
   }
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    script          = "../Scripts/post_install_vagrant-database.sh"
+    script          = "../Scripts/Post_Install_Vagrant-Database.sh"
     environment_vars = ["DBUSER=${var.db_user}","DBPASS=${var.db_pass}"]
 
   }
