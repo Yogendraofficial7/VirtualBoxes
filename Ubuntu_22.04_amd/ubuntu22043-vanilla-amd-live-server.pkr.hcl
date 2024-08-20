@@ -61,7 +61,13 @@ build {
     script          = "../Scripts/Post_Install_Packages.sh"
  
   }
-  
+
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    script          = "../Scripts/Post_Install_Samba.sh"
+ 
+  }
+
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     script          = "../Scripts/Post_Install_Vagrant.sh"
