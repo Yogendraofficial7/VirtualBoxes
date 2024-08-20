@@ -23,3 +23,14 @@ variable "iso_url" {
   type = string 
   default = "https://cdimage.ubuntu.com/releases/22.04.3/release/ubuntu-22.04.3-live-server-arm64.iso"
 }
+
+variable "db_user" {
+    type = string
+    default = "Yogi"
+}
+
+variable "db_pass" {
+  type = string
+  sensitive = true
+  default = "Yogi"
+}
