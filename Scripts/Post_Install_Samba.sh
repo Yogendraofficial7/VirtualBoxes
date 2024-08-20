@@ -16,10 +16,10 @@ sudo apt-get update -y
 # Install Samba using apt-get
 sudo apt-get install -y samba
 
-# Add existing system user 'yogi' to Samba and set password non-interactively
-sudo smbpasswd -a rcxdev << EOF
-yogi
-yogi
+# Add existing system user 'Yogi' to Samba and set password non-interactively
+sudo smbpasswd -a Yogi << EOF
+Yogi
+Yogi
 EOF
 
 # Configure Samba
@@ -40,8 +40,8 @@ sudo bash -c 'cat <<EOF > /etc/samba/smb.conf
 
 [share]
    comment = Samba on Ubuntu
-   path = /home/yogi/samba-share
-   valid users = yogi
+   path = /home/Yogi/samba-share
+   valid users = Yogi
    read only = no
    browseable = yes
    writable = yes
@@ -66,7 +66,7 @@ sudo systemctl restart smbd
 # Restart Samba service
 sudo systemctl restart smbd
 
-# Verify Samba user 'yogi' is added
+# Verify Samba user 'Yogi' is added
 sudo pdbedit -L -v
 
 echo "Samba configuration completed successfully."
