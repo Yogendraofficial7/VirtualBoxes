@@ -3,7 +3,7 @@
 ## How to use Packer to create Ubuntu 20.04 Vagrant boxes
 
 ```
-i have windows 11 os, install below tools with versions
+I have windows 11 os, install below tools with versions
 
 D:\PACKER\UBUNTU-PACKER>vagrant --version
 Vagrant 2.2.16
@@ -14,7 +14,7 @@ D:\PACKER\UBUNTU-PACKER>packer --version
 virtual box version: 6.1.22
 ```
 
-- clone the repo code into D:\PACKER\UBUNTU-PACKER folder
+- Clone the repo code into D:\PACKER\UBUNTU-PACKER folder
 
 ```
 goto this folder and open gitbash from here
@@ -22,7 +22,7 @@ goto this folder and open gitbash from here
 D:\PACKER\UBUNTU-PACKER
 
 ```
-- download the iso file from
+- Download the iso file from
 - http://cdimage.ubuntu.com/ubuntu-legacy-server/releases/20.04/release/ubuntu-20.04.1-legacy-server-amd64.iso
 
 ```
@@ -33,16 +33,16 @@ packer validate build.json
 packer build build.json
 ```
 
-- here, packer will download the iso file and bring up a virtual machine, installs ubuntu20.04 in it and executes our scripts, required packages, forms vagrant box in outputs folder and exits
+- Here, packer will download the iso file and bring up a virtual machine, installs ubuntu20.04 in it and executes our scripts, required packages, forms vagrant box in outputs folder and exits
 - to view the background output of build process, we can view from virtual box gui
 
 
-- during build process we can enter into machine by virtualbox gui, now virtual machine will be destroyed after installing required packages, 
+- During the build process we can enter into machine by virtualbox gui, now virtual machine will be destroyed after installing required packages, 
 - username: vagrant
 - password: vagrant
 
-- now we have vagrant box image in outputs folder -> virtualbox-ubuntu2004.box
-- we need to add this box to vagrant
+- Now we have vagrant box image in outputs folder -> virtualbox-ubuntu2004.box
+- We need to add this box to vagrant
 
 ```
 vagrant box remove virtualbox-ubuntu2004
@@ -52,8 +52,8 @@ pwd
 /d/PACKER/UBUNTU-PACKER
 ```
 
-- now this box is added to local vagrant, we need to bringup virtual machine by using this vagrant box and Vagrantfile
-- below is the vagrant file
+- Now this box is added to local vagrant, we need to bringup virtual machine by using this vagrant box and Vagrantfile
+- Below is the vagrant file
 
   
 ```
@@ -89,7 +89,7 @@ end
 vagrant up
 ```
 
-- you will get below output
+- You will get below output
 
 ```
 $ vagrant up
@@ -150,8 +150,4 @@ Run 'do-release-upgrade' to upgrade to it.
 
 Last login: Tue Aug  20 21:45:03 2024
 vagrant@vagrant:~$ 
-```
-
-```
-ref: https://github.com/geerlingguy/packer-boxes/tree/master
 ```
