@@ -25,6 +25,16 @@ variable "iso_checksum" {
   type = string
   default = "24a062ff94859bf14bfed788f2530b9522bda718b62656f7853af3d78d5fdd07"
 }
+variable "db_user" {
+    type = string
+    default = "Yogi"
+}
+
+variable "db_pass" {
+  type = string
+  sensitive = true
+  default = "Yogi"
+}
 
 variable "iso_url" {
   type = string 
