@@ -10,6 +10,31 @@ sudo apt install -y links rsync
 sudo apt-get install -y openvswitch-switch
 sudo apt install network-manager -y
 
+# Update package index
+sudo apt-get update
+
+# Variables
+USERNAME="Yogi"
+PASSWORD="Yogi"
+
+# Create user with password
+echo "Creating user $USERNAME..."
+useradd -m -s /bin/bash "$USERNAME"
+
+# Set password for the user
+echo "$USERNAME:$PASSWORD" | chpasswd
+
+# Add user to sudo group (optional, if you want to give sudo privileges)
+usermod -aG sudo $USERNAME
+
+echo "User $USERNAME created successfully with password $PASSWORD."
+
+echo "rcxdev ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/Yogi
+chmod 440 /etc/sudoers.d/Yogi
+
+# Update package index
+sudo apt-get update
+
 # Installing awscli-v2
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
@@ -22,7 +47,7 @@ sudo apt-get update
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 sudo apt install docker -y
-sudo usermod -aG docker docker
+sudo usermod -aG docker Yogi
 sudo systemctl enable docker
 sudo systemctl start docker
 
